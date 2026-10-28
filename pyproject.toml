@@ -1,0 +1,15 @@
+[project]
+name = "mbrs-app"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "flask>=3.0",
+    "arelle-release",
+    "easyocr",
+    "pymupdf",
+    "numpy",
+    "requests",
+]
+
+[tool.uv]
+package = false
