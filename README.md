@@ -5,7 +5,7 @@ A local-first pre-check that finds MBRS filing errors before they reach mTool, a
 
 *Lulus* means "pass" in Malay. Built by **GengAI (Actual Intelligence)** for Hackspire Lumina 2026.
 
-![tests](https://github.com/OWNER/lulus-ai/actions/workflows/tests.yml/badge.svg)
+![tests](https://github.com/cendekiaholistikmy/lulus-ai/actions/workflows/tests.yml/badge.svg)
 ![python](https://img.shields.io/badge/python-3.10%2B-1AB0FF)
 ![license](https://img.shields.io/badge/license-MIT-FFB020)
 
@@ -45,7 +45,7 @@ Every issue names the **field**, the **reason**, the **rule**, a **suggested fix
 ## Quick start
 
 ```bash
-git clone https://github.com/OWNER/lulus-ai.git
+git clone https://github.com/cendekiaholistikmy/lulus-ai.git
 cd lulus-ai
 pip install -r requirements.txt
 
