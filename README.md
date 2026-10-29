@@ -11,6 +11,13 @@ A local-first pre-check that finds MBRS filing errors before they reach mTool, a
 
 ![lulus.ai pre-check report](docs/demo_report.png)
 
+## What's in this repository
+
+| Folder | What it is |
+| --- | --- |
+| [`app/`](app/) | **The lulus.ai web app.** SvelteKit interface plus a Python engine: PDF text layer or EasyOCR → regex extraction → a local `gemma3:4b` model (via Ollama) that proposes values grounded in the source → human review → MBRS XBRL validated by **Arelle against SSM's official `SSMxT_2022v1.0` taxonomy** (`app/taxonomy.zip`). Built by Luqman Al-Hakim; originally at [mathakim29/lulus.ai](https://github.com/mathakim29/lulus.ai). Setup: [`app/README.md`](app/README.md). |
+| repository root | **The explainable pre-check and benchmark.** A small, dependency-light rule engine that pinpoints the wrong field and explains the fix, an offline network guard, and a reproducible benchmark on synthetic filings with labelled errors. Runs in seconds, tested in CI. |
+
 ---
 
 ## The problem
@@ -127,22 +134,24 @@ through IRIS Instant and mTool, and add authorised real-world samples.
 
 ## Limitations
 
-- The rule pack (`data/sample_rules.json`) is a small sample **modelled on** MBRS-style checks. It is **not** SSM's
-  official SSMxT2022 formula linkbase.
-- Text-based PDFs only; no OCR yet. One statement layout family is supported.
+- The root rule pack (`data/sample_rules.json`) is a small sample **modelled on** MBRS-style checks, not SSM's
+  official formula linkbase. Official-taxonomy validation lives in `app/` (Arelle + `SSMxT_2022v1.0`); the next
+  step is running the root benchmark through that engine too.
+- The root prototype reads text-based PDFs only; OCR (EasyOCR) is in `app/`.
 - No comparison with IRIS Instant or mTool yet.
 
 ## Roadmap
 
-1. **Core engine** (this repo): rule engine, extraction, explanations, benchmark.
-2. **Taxonomy lock:** load SSMxT2022 calculation and formula linkbases with an XBRL processor (e.g. Arelle) and map labels to official concepts.
-3. **Local model and review UI:** a small open-weights model that only rephrases, and a split-screen source-vs-field review with a human sign-off gate.
+1. **Core engine** (repository root): explainable rule engine, extraction, offline guard, benchmark.
+2. **Taxonomy lock** (started in `app/`): field specs read from SSM's `SSMxT_2022v1.0` taxonomy and validated with Arelle.
+3. **Local model and review UI** (started in `app/`): local `gemma3:4b` via Ollama, grounded extraction, human review before XBRL output.
 4. **Pilot:** 2-3 company secretarial firms, authorised filings, side-by-side benchmark with IRIS Instant and mTool.
 
 ## Project structure
 
 ```
 lulus-ai/
+├── app/                # lulus.ai web app: SvelteKit UI, OCR, local LLM, Arelle + SSMxT_2022v1.0
 ├── lulus/              # engine: extract, rules, explain, offline guard, report, CLI
 ├── data/               # label mapping (EN/BM) and the sample rule pack
 ├── tools/              # synthetic sample generator and benchmark
@@ -155,6 +164,7 @@ lulus-ai/
 ## Team
 
 **GengAI (Actual Intelligence)** · Hackspire Lumina 2026
+Web app (`app/`): Luqman Al-Hakim ([mathakim29](https://github.com/mathakim29))
 Contact: m.ziqrionlyone@gmail.com
 
 ## Sources
