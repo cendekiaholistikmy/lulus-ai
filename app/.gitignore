@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Node, SvelteKit and Vite
+node_modules/
+.svelte-kit/
+build/
+dist/
+.vite/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Local taxonomy and application caches
+.cache/
+*.log
+
+# Generated validation instances and presentation files
+output/
+tmp/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
