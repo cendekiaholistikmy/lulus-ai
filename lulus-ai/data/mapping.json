@@ -1,0 +1,39 @@
+{
+  "_about": "Maps the line labels found in a financial statement to lulus.ai concept IDs. English and Malay labels are both accepted. This is a sample mapping for the prototype, not SSM's official taxonomy.",
+  "text": {
+    "company_name": ["Company name", "Nama syarikat"],
+    "registration_no": ["Registration no", "Registration number", "No. pendaftaran"],
+    "financial_year_end": ["Financial year end", "Tahun kewangan berakhir"]
+  },
+  "amount": {
+    "ppe": ["Property, plant and equipment", "Hartanah, loji dan peralatan"],
+    "total_non_current_assets": ["Total non-current assets", "Jumlah aset bukan semasa"],
+    "inventories": ["Inventories", "Inventori"],
+    "trade_receivables": ["Trade receivables", "Penghutang perdagangan"],
+    "cash": ["Cash and bank balances", "Tunai dan baki bank"],
+    "total_current_assets": ["Total current assets", "Jumlah aset semasa"],
+    "total_assets": ["Total assets", "Jumlah aset"],
+    "share_capital": ["Share capital", "Modal saham"],
+    "retained_earnings": ["Retained earnings", "Pendapatan tertahan"],
+    "total_equity": ["Total equity", "Jumlah ekuiti"],
+    "borrowings_non_current": ["Borrowings (non-current)", "Pinjaman (bukan semasa)"],
+    "total_non_current_liabilities": ["Total non-current liabilities", "Jumlah liabiliti bukan semasa"],
+    "trade_payables": ["Trade payables", "Pemiutang perdagangan"],
+    "borrowings_current": ["Borrowings (current)", "Pinjaman (semasa)"],
+    "total_current_liabilities": ["Total current liabilities", "Jumlah liabiliti semasa"],
+    "total_liabilities": ["Total liabilities", "Jumlah liabiliti"],
+    "total_equity_and_liabilities": ["Total equity and liabilities", "Jumlah ekuiti dan liabiliti"],
+    "revenue": ["Revenue", "Hasil"],
+    "cost_of_sales": ["Cost of sales", "Kos jualan"],
+    "gross_profit": ["Gross profit", "Untung kasar"],
+    "other_income": ["Other income", "Pendapatan lain"],
+    "administrative_expenses": ["Administrative expenses", "Perbelanjaan pentadbiran"],
+    "finance_costs": ["Finance costs", "Kos kewangan"],
+    "profit_before_tax": ["Profit before tax", "Untung sebelum cukai"],
+    "income_tax_expense": ["Income tax expense", "Perbelanjaan cukai pendapatan"],
+    "profit_for_the_year": ["Profit for the year", "Untung bagi tahun kewangan"]
+  },
+  "sections": {
+    "statutory_declaration": ["STATUTORY DECLARATION", "AKUAN BERKANUN"]
+  }
+}

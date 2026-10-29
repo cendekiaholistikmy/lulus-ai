@@ -1,0 +1,31 @@
+{
+  "pack": "lulus-sample-rules",
+  "version": "0.1.0",
+  "modelled_on": "SSMxT2022 (MBRS 2.0)",
+  "_about": "A small, hand-written rule pack used by the prototype. The rules are basic accounting identities and presence checks of the kind MBRS validation performs. They are NOT SSM's official formula linkbase; loading the official SSMxT2022 calculation and formula linkbases is on the roadmap.",
+  "equations": [
+    {"id": "SFP-01", "title": "Non-current assets add up", "severity": "error", "lhs": "total_non_current_assets", "rhs": ["ppe"], "basis": "Total non-current assets must equal the sum of its line items."},
+    {"id": "SFP-02", "title": "Current assets add up", "severity": "error", "lhs": "total_current_assets", "rhs": ["inventories", "trade_receivables", "cash"], "basis": "Total current assets must equal inventories plus trade receivables plus cash and bank balances."},
+    {"id": "SFP-03", "title": "Total assets add up", "severity": "error", "lhs": "total_assets", "rhs": ["total_non_current_assets", "total_current_assets"], "basis": "Total assets must equal non-current assets plus current assets."},
+    {"id": "SFP-04", "title": "Equity adds up", "severity": "error", "lhs": "total_equity", "rhs": ["share_capital", "retained_earnings"], "basis": "Total equity must equal share capital plus retained earnings."},
+    {"id": "SFP-05", "title": "Non-current liabilities add up", "severity": "error", "lhs": "total_non_current_liabilities", "rhs": ["borrowings_non_current"], "basis": "Total non-current liabilities must equal the sum of its line items."},
+    {"id": "SFP-06", "title": "Current liabilities add up", "severity": "error", "lhs": "total_current_liabilities", "rhs": ["trade_payables", "borrowings_current"], "basis": "Total current liabilities must equal trade payables plus current borrowings."},
+    {"id": "SFP-07", "title": "Total liabilities add up", "severity": "error", "lhs": "total_liabilities", "rhs": ["total_non_current_liabilities", "total_current_liabilities"], "basis": "Total liabilities must equal non-current plus current liabilities."},
+    {"id": "SFP-08", "title": "Equity and liabilities add up", "severity": "error", "lhs": "total_equity_and_liabilities", "rhs": ["total_equity", "total_liabilities"], "basis": "Total equity and liabilities must equal total equity plus total liabilities."},
+    {"id": "SFP-09", "title": "Balance sheet balances", "severity": "error", "lhs": "total_assets", "rhs": ["total_equity_and_liabilities"], "basis": "Total assets must equal total equity and liabilities."},
+    {"id": "PL-01", "title": "Gross profit adds up", "severity": "error", "lhs": "gross_profit", "rhs": ["revenue", "cost_of_sales"], "basis": "Gross profit must equal revenue less cost of sales."},
+    {"id": "PL-02", "title": "Profit before tax adds up", "severity": "error", "lhs": "profit_before_tax", "rhs": ["gross_profit", "other_income", "administrative_expenses", "finance_costs"], "basis": "Profit before tax must equal gross profit plus other income less administrative expenses and finance costs."},
+    {"id": "PL-03", "title": "Profit for the year adds up", "severity": "error", "lhs": "profit_for_the_year", "rhs": ["profit_before_tax", "income_tax_expense"], "basis": "Profit for the year must equal profit before tax less income tax expense."}
+  ],
+  "required_text": [
+    {"id": "REQ-T01", "field": "company_name"},
+    {"id": "REQ-T02", "field": "registration_no"},
+    {"id": "REQ-T03", "field": "financial_year_end"}
+  ],
+  "required_sections": [
+    {"id": "REQ-S01", "section": "statutory_declaration", "severity": "error", "terse_message": "Statutory Declaration MUST be reported", "basis": "A statutory declaration must be included with the financial statements."}
+  ],
+  "signs": [
+    {"id": "SGN-01", "severity": "warning", "positive": ["ppe", "inventories", "trade_receivables", "cash", "share_capital", "revenue", "trade_payables"], "negative": ["cost_of_sales", "administrative_expenses", "finance_costs"], "basis": "Assets, liabilities and revenue are shown as positive amounts; expenses are shown in brackets (negative)."}
+  ]
+}

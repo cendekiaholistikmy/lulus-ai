@@ -1,0 +1,65 @@
+{
+  "filings": 70,
+  "clean_filings": 10,
+  "seeded_filings": 60,
+  "detected_pct": 100.0,
+  "exact_field_pct": 95.0,
+  "field_flagged_pct": 100.0,
+  "correct_cause_pct": 95.0,
+  "correct_fix_pct": 95.0,
+  "false_alarms_on_clean": 0,
+  "extra_issues_on_seeded": 3,
+  "actionable_explanations_pct": 100.0,
+  "mean_ms_per_filing": 47.6,
+  "network_calls": 0,
+  "per_kind": {
+    "TRANSPOSITION": {
+      "n": 10,
+      "detected": 10,
+      "exact_field": 9,
+      "field_flagged": 10,
+      "cause": 9,
+      "fix": 9
+    },
+    "DIGIT": {
+      "n": 10,
+      "detected": 10,
+      "exact_field": 8,
+      "field_flagged": 10,
+      "cause": 8,
+      "fix": 8
+    },
+    "SIGN": {
+      "n": 10,
+      "detected": 10,
+      "exact_field": 10,
+      "field_flagged": 10,
+      "cause": 10,
+      "fix": 10
+    },
+    "SCALE": {
+      "n": 10,
+      "detected": 10,
+      "exact_field": 10,
+      "field_flagged": 10,
+      "cause": 10,
+      "fix": 10
+    },
+    "MISSING_FIELD": {
+      "n": 10,
+      "detected": 10,
+      "exact_field": 10,
+      "field_flagged": 10,
+      "cause": 10,
+      "fix": 10
+    },
+    "MISSING_SECTION": {
+      "n": 10,
+      "detected": 10,
+      "exact_field": 10,
+      "field_flagged": 10,
+      "cause": 10,
+      "fix": 10
+    }
+  }
+}

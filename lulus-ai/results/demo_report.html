@@ -1,0 +1,31 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>lulus.ai pre-check report</title><style>
+:root{--bg:#030A18;--card:#081A33;--line:#1B3A60;--ink:#F3F7FF;--body:#B4C3DF;--muted:#6F86AD;
+--cyan:#1AB0FF;--amber:#FFB020;--red:#FF6B6B;--green:#22D3A0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:40px 20px 64px}
+.brand{font-weight:900;font-size:28px}.brand span{color:var(--cyan)}
+.meta{color:var(--muted);font-size:14px;margin:4px 0 28px}
+h1{font-size:36px;font-weight:900;text-transform:uppercase;margin:0 0 4px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0 32px}
+.tile{background:var(--card);border:2px solid var(--line);border-radius:8px;padding:18px 22px}
+.tile b{display:block;font-size:44px;font-weight:900;line-height:1.1}
+.tile.pass{border-color:var(--green)}.tile.pass span{color:var(--green)}
+.tile.warn{border-color:var(--amber)}.tile.warn span{color:var(--amber)}
+.tile.err{border-color:var(--red)}.tile.err span{color:var(--red)}
+.tile span{font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:14px}
+.issue{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--red);border-radius:8px;
+padding:20px 24px;margin:0 0 16px}
+.issue.warning{border-left-color:var(--amber)}
+.pill{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+padding:2px 10px;border-radius:999px;background:#3A1220;color:var(--red)}
+.warning .pill{background:#3A2A08;color:var(--amber)}
+.issue h2{font-size:22px;margin:10px 0 8px}
+.nums{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--ink);margin:0 0 8px}
+.issue p{margin:6px 0;color:var(--body)}.issue p b{color:var(--ink)}
+.fix{background:#062A40;border:1px solid var(--cyan);border-radius:6px;padding:10px 14px;color:var(--ink)!important}
+.rule{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;color:var(--muted)}
+.ok{color:var(--green);font-weight:700}
+footer{margin-top:40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:640px){.tiles{grid-template-columns:1fr}}
+</style></head><body><div class='wrap'><div class='brand'>lulus<span>.ai</span></div><div class='meta'>Pre-check report · demo_filing.pdf · Contoh Demo Sdn. Bhd. · rules: lulus-sample-rules v0.1.0 (modelled on SSMxT2022 (MBRS 2.0))</div><h1>Pre-check result</h1><div class='tiles'><div class='tile pass'><span>Passed</span><b>49</b></div><div class='tile warn'><span>Warnings</span><b>0</b></div><div class='tile err'><span>Errors</span><b>2</b></div></div><div class='issue error'><span class='pill'>error</span><h2>The statutory declaration is missing</h2><p><b>Why:</b> The filing has no statutory declaration section. A validator would typically flag this tersely, e.g. “Statutory Declaration MUST be reported”.</p><p><b>Likely cause:</b> the declaration page was not included in the uploaded statements.</p><p class='fix'><b>Suggested fix (needs your approval):</b> Add the signed statutory declaration page (with the declarant&#x27;s details) and run the check again.</p><p class='rule'>REQ-S01: A statutory declaration must be included with the financial statements.</p></div><div class='issue error'><span class='pill'>error</span><h2>Total equity doesn&#x27;t add up</h2><div class='nums'>Reported RM 1,248,500 · Expected RM 1,284,500</div><p><b>Why:</b> Total equity is reported as RM 1,248,500, but the related figures imply RM 1,284,500 (a difference of RM 36,000).</p><p><b>Likely cause:</b> two digits look swapped when retyping (48 vs 84).</p><p><b>Source:</b> page 1, line 16</p><p class='fix'><b>Suggested fix (needs your approval):</b> Change Total equity from RM 1,248,500 to RM 1,284,500.</p><p class='rule'>SFP-04, SFP-08: Total equity must equal share capital plus retained earnings. Total equity and liabilities must equal total equity plus total liabilities.</p></div><footer>Checked locally in 44 ms · 0 network calls · lulus.ai never files anything; you approve every fix. Prototype rule pack: not SSM's official formula linkbase.</footer></div></body></html>
